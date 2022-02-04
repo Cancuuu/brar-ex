@@ -11,7 +11,7 @@ export default function Home() {
     const real = realAmount;
     const realToUsd = real / 5.28;
     const usdToArs = realToUsd * 183; //masomenos
-    setArsAmount(usdToArs);
+    setArsAmount(usdToArs.toFixed(2));
   };
 
   useEffect(() => {
@@ -29,7 +29,6 @@ export default function Home() {
               className={styles.input}  
               placeholder="Real Brasilero"
               type="number"
-              value={realAmount}
               onChange={(e) => setRealAmount(e.target.value)}
             />
           </div>
@@ -39,11 +38,10 @@ export default function Home() {
             className={styles.input}
             placeholder="Peso Argentino"
             type="number"
-            value={arsAmount.toFixed(2)}
+            value={arsAmount}
             onChange={(e) => setArsAmount(e.target.value)}
           />
           </div>
-
         </div>
       </main>
     </div>
